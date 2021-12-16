@@ -1,0 +1,10 @@
+.card {
+    width: 18rem; 
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}

@@ -1,0 +1,11 @@
+.favoriteIcon {
+    color: rgba(255,165,0,0.3);
+}
+
+.favoriteIcon:hover {
+    color: orange;
+}
+
+.active {
+    color: orange;
+}
