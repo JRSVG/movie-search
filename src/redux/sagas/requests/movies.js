@@ -3,6 +3,7 @@ const REACT_APP_OMDB_API_KEY = '93d91712';
 export function requestMoviesByQuery(payload) {
   const { query, page } = payload;
   const url = `http://omdbapi.com/?apikey=${REACT_APP_OMDB_API_KEY}&s=${query}&page=${page}&r=json`;
+  console.log('request to: ', url);
   return fetch(url);
 }
 
