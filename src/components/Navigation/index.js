@@ -23,7 +23,6 @@ const Navigation = (props) => {
     dispatch({ type: "FETCH_MOVIES", payload: { query, page: 1 } });
   };
 
-  console.log('process.env.PUBLIC_URL: ', process.env.PUBLIC_URL);
 
   return (
     <Navbar bg="light" expand="lg">

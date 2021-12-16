@@ -48,6 +48,9 @@ const Detail = ({ movieDetail }) => {
     response,
   };
 
+  const fallbackImageSource =
+    "https://media.istockphoto.com/vectors/no-image-available-sign-vector-id922962354?k=20&m=922962354&s=612x612&w=0&h=f-9tPXlFXtz9vg_-WonCXKCdBuPUevOBkp3DQ-i0xqo=";
+
   let splittedGenre;
   if (genre) {
     if (genre.includes(",")) {
@@ -104,7 +107,13 @@ const Detail = ({ movieDetail }) => {
   const imageComponent = (
     <Row>
       <Figure>
-        <Figure.Image width={228} height={338} alt="171x180" src={poster} />
+        <Figure.Image
+          width={228}
+          height={338}
+          alt="171x180"
+          src={poster}
+          onError={ (e)=>{ e.target.onerror = null; e.target.src = fallbackImageSource } }
+        />
       </Figure>
     </Row>
   );
@@ -113,7 +122,7 @@ const Detail = ({ movieDetail }) => {
     <Row>
       <p>
         {splittedGenre.map((el) => (
-          <Badge style={{ margin: "0.2rem" }}>{el.trim()}</Badge>
+          <Badge key={el.trim()} style={{ margin: "0.2rem" }}>{el.trim()}</Badge>
         ))}
       </p>
     </Row>
@@ -128,7 +137,7 @@ const Detail = ({ movieDetail }) => {
   const additionalInformationComponent = (
     <Fragment>
       {Object.entries(movieProperties).map(([key, value]) => (
-        <Row>
+        <Row key={key}>
           <p>
             <b>{`${key[0].toUpperCase()}${key.substring(1)}`}:</b> {value}
           </p>
@@ -142,7 +151,11 @@ const Detail = ({ movieDetail }) => {
       {ratings && (
         <Row>
           {ratings.map((rating) => (
-            <Review from={rating.Source} value={rating.Value} />
+            <Review
+              key={rating.Source}
+              from={rating.Source}
+              value={rating.Value}
+            />
           ))}
         </Row>
       )}

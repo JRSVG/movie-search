@@ -13,7 +13,7 @@ const ListItem = (props) => {
 
   return (
     <Card
-      style={{ width: "calc(100%-1rem)", maxHeight: "28rem", margin: "0.2rem" }}
+      style={{ width: "calc(100%-1rem)", maxHeight: "35rem", margin: "0.2rem" }}
     >
       <Card.Img
         style={{ height: "16rem" }}
