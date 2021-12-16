@@ -35,8 +35,8 @@ const Navigation = (props) => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Link href='/'>Domov</Link>
-            <Link href='/oblubene'>Obľúbené ({favoriteMovieIds.length})</Link>
+            <Nav.Link href='/'>Domov</Nav.Link>
+            <Nav.Link href='/oblubene'>Obľúbené ({favoriteMovieIds.length})</Nav.Link>
           </Nav>
         </Navbar.Collapse>
         <Form className="d-flex" style={{ maxWidth: "230px" }}>
