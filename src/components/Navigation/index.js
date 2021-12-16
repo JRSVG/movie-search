@@ -8,7 +8,7 @@ import {
   FormControl,
 } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 
 const Navigation = (props) => {
   const dispatch = useDispatch();
@@ -18,10 +18,12 @@ const Navigation = (props) => {
 
   const setSearchedQuery = (event) => {
     event.preventDefault();
-    navigate('/');
+    navigate("/");
     dispatch({ type: "SET_SEARCHED_QUERY", payload: { query: query } });
     dispatch({ type: "FETCH_MOVIES", payload: { query, page: 1 } });
   };
+
+  console.log('process.env.PUBLIC_URL: ', process.env.PUBLIC_URL);
 
   return (
     <Navbar bg="light" expand="lg">
@@ -33,13 +35,11 @@ const Navigation = (props) => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="/">Domov</Nav.Link>
-            <Nav.Link href="/oblubene">
-              Obľúbené ({favoriteMovieIds.length})
-            </Nav.Link>
+            <Link href='/'>Domov</Link>
+            <Link href='/oblubene'>Obľúbené ({favoriteMovieIds.length})</Link>
           </Nav>
         </Navbar.Collapse>
-        <Form className="d-flex" style={{ maxWidth: "230px"}}>
+        <Form className="d-flex" style={{ maxWidth: "230px" }}>
           <FormControl
             type="search"
             placeholder="Hľadať (napr. Batman)"

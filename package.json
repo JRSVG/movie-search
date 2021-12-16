@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "movie-search",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,7 +14,7 @@
     "react-infinite-scroll-component": "^6.1.0",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.1.1",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.0",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
     "redux-saga": "^1.1.3",
